@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,7 +40,7 @@ public class AccountApiController {
 
 	}
 
-	@GetMapping("/account")
+	@PostMapping("/account")
 	public ResponseEntity<AccountDto> createAccount(@RequestBody AccountDto body) {
 
 		ResponseEntity<AccountDto> response = null;
@@ -55,7 +57,7 @@ public class AccountApiController {
 
 	}
 
-	@GetMapping("/account/{id}")
+	@PutMapping("/account/{id}")
 	public ResponseEntity<AccountDto> updateAccount(@PathVariable Long id, @RequestBody AccountDto body) {
 
 		ResponseEntity<AccountDto> response = null;
@@ -72,7 +74,7 @@ public class AccountApiController {
 
 	}
 
-	@GetMapping("/transfer")
+	@PutMapping("/transfer")
 	public ResponseEntity<TransferDto> doMoneyTransfer(@RequestBody TransferParamDto body) {
 
 		ResponseEntity<TransferDto> response = null;
