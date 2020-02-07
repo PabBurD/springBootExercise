@@ -68,7 +68,7 @@ To achieve all the requeriments, we have created four endpoints to request.
 - GET: /accountapi/account/{id} -> Finds a single account. Return an AccountDTO with all data from searched account. 
 - POST: /accountapi/account -> In request body, we will send a DTO with all needed data for create an account. Return an AccountDto with all data from created account.
 - PUT: /accountapi/account/{id} -> In request body, we will send a DTO with all needed data for update an account. Return an AccountDto with all data from updated account.
-- PUT: /accountapi/transfer -> In request body, we will send a DTO with account origin id, account destination id and amount to send between accounts. Return a TransferDto with all data related to money transaction between accounts.
+- PUT: /accountapi/transfer -> In request body, we will send a DTO with account origin id, account destination id and amount to send between accounts. Return a TransferDto with all data related to money transaction between accounts. In our case, only positive amounts are allowed.
 
 ## Service
 
