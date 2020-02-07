@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "1b0a3167-0ab8-4417-b01c-4472cc1267b6",
+		"name": "Test Account Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/accountapi/account/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accountapi",
+						"account",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"treasury\": true,\n\t\"currency\": \"EUR\",\n\t\"balance\": 1000,\n\t\"name\": \"account_EUR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/accountapi/account/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accountapi",
+						"account",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update account",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"id\": 1,\n\t\"currency\": \"GBP\",\n\t\"treasury\": false,\n\t\"balance\": 1400,\n\t\"name\": \"updated_account_GBP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/accountapi/account/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accountapi",
+						"account",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Money transfer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"originAccountId\": 1,\n    \"destinationAccountId\": 2,\n    \"amount\": 1500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/accountapi/transfer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accountapi",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
