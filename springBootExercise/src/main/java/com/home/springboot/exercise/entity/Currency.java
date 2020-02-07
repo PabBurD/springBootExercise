@@ -8,10 +8,10 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Currency {
-	
+
 	@Id
 	private String id;
-	
+
 	@OneToMany(mappedBy = "currency")
 	private Set<Account> accounts;
 
@@ -30,6 +30,5 @@ public class Currency {
 	public void setAccounts(Set<Account> accounts) {
 		this.accounts = accounts;
 	}
-	
 
 }

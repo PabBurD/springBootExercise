@@ -10,22 +10,22 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Account {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
 	private Long id;
-	
+
 	private String name;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "currency_id")
 	private Currency currency;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "balance_id")
 	private Money balance;
-	
+
 	private Boolean treasury;
 
 	public Long getId() {
@@ -67,6 +67,5 @@ public class Account {
 	public void setTreasury(Boolean treasury) {
 		this.treasury = treasury;
 	}
-	
 
 }

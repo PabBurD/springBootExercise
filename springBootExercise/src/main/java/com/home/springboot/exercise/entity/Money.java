@@ -10,13 +10,13 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Money {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private Double balance;
-	
+
 	@OneToMany(mappedBy = "balance")
 	private Set<Account> accounts;
 
@@ -43,6 +43,5 @@ public class Money {
 	public void setAccounts(Set<Account> accounts) {
 		this.accounts = accounts;
 	}
-	
 
 }
