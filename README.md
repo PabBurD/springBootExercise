@@ -87,7 +87,7 @@ After execute both units and components test, we reached 99,1% code coverage.
 
 Also, in component test, we have used the annotation @Sql which we can execute our custom sql script for a single test.
 
-All tests are executed with JUnit 4.
+All tests have been executed with JUnit 4.
 
 ## Postman
 
