@@ -50,7 +50,7 @@ public class AccountApiController {
 		if (accountDto != null) {
 			response = new ResponseEntity<>(accountDto, HttpStatus.CREATED);
 		} else {
-			response = new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			response = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 
 		return response;
