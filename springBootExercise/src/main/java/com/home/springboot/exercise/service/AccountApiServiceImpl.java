@@ -121,7 +121,7 @@ public class AccountApiServiceImpl implements AccountApiService {
 		if (origin != null && destination != null) {
 			Double originBalance = origin.getBalance().getBalance() - amount;
 
-			if (originBalance >= 0 || (originBalance < 0 && origin.getTreasury())) {
+			if ((amount > 0.0) && (originBalance >= 0 || (originBalance < 0 && origin.getTreasury()))) {
 
 				Double destBalance = destination.getBalance().getBalance() + amount;
 
